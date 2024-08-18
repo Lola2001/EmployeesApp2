@@ -12,11 +12,15 @@
     <tbody>
       <tr *ngFor="let employee of employees" [ngClass]="{'highlight': isHighlight(employee)}">
         <td>{{ employee.name }}</td>
-        <td class="centered">{{ employee.totalHours | number:'1.0-0' }}</td> 
+        <td class="centered">{{ employee.totalHours | number:'1.0-0' }}</td>
         <td class="centered">
           <button class="edit-button" (click)="editEmployee(employee)">Edit</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <div class="chart-container">
+    <canvas id="employeeChart"></canvas>
+  </div>
 </div>
